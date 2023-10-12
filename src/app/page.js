@@ -12,12 +12,8 @@ export default function Page() {
         <option>Makan Gorengan</option>
         <option>Makan Bubur Ayam</option>
       </select>
-      <Link href="/">
         <button>Login</button>
-      </Link>
-      <Link href="/">
         <button className="btnSecondary">Register</button>
-      </Link>
     </div>
   );
 }
