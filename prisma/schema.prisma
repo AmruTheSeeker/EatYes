@@ -6,7 +6,47 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url  	= env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id              String          @id @default(cuid())
+  name            String
+  email           String          @unique
+  password        String
+  gender          String
+  age             Int
+  tall            Int
+  recent_weight   Int
+  profile_picture String
+  Goals           Goals[]
+  CaloryHistory   CaloryHistory[]
+}
+
+model Goals {
+  id           String @id @default(cuid())
+  goal_options String
+  goal_weight  String
+  weekly_goal  String
+  user_id      String
+  user         User   @relation(fields: [user_id], references: [id])
+}
+
+model Food {
+  id            String          @id @default(cuid())
+  name          String
+  calory        Int
+  CaloryHistory CaloryHistory[]
+}
+
+model CaloryHistory {
+  id          String @id @default(cuid())
+  food_name   String
+  food_calory Int
+  user_id     String
+  user        User   @relation(fields: [user_id], references: [id])
+  food_id     String
+  food        Food   @relation(fields: [food_id], references: [id])
 }
