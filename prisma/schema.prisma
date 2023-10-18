@@ -50,3 +50,18 @@ model CaloryHistory {
   food_id     String
   food        Food   @relation(fields: [food_id], references: [id])
 }
+
+model UserGuest {
+  id              String @id @default(cuid())
+  name            String
+  email           String
+  password        String
+  gender          String
+  age             Int
+  tall            Int
+  recent_weight   Int
+  profile_picture String
+  calory          Int
+  food_name       String
+  food_calory     Int
+}
