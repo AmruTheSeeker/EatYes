@@ -1,19 +1,17 @@
+
 export default function Page() {
   return (
-    <div className="m-8">
-      <div className="card">
-        <h1>Belum dibikin nih Homepage nya puh, sepuhh...</h1>
-        <h2>Bantuin kami dong puhhh, aku mah masih pemula</h2>
+    <div className="h-screen flex flex-col justify-center items-center space-y-4">
+      <div className="card bg-transparent">
+        <img src="eatYesLogo.png" />
       </div>
-
-      <input type="text" placeholder="Input" />
-      <textarea placeholder="Textarea" />
-      <select>
-        <option>Makan Gorengan</option>
-        <option>Makan Bubur Ayam</option>
-      </select>
-        <button>Login</button>
-        <button className="btnSecondary">Register</button>
+      <div>
+        <button
+          className="btnSecondary w-[250px] h-[50px] text-3xl"
+        >
+          I Wanna Eat!
+        </button>
+      </div>
     </div>
   );
 }

@@ -7,7 +7,7 @@ module.exports = {
   ],
   theme: {
     colors: {
-      black: "#000",
+      orange: "#ffd185",
       transparent: "transparent",
       primary: {
         50: "#fff3f1",
@@ -20,7 +20,7 @@ module.exports = {
         700: "#c8290d",
         800: "#a5250f",
         900: "#882514",
-        950: "#4b0f04",
+        950: "#ffd185",
       },
       secondary: {
         50: "#f7f7f8",
@@ -33,7 +33,7 @@ module.exports = {
         700: "#4f4c58",
         800: "#44414b",
         900: "#3b3941",
-        950: "#19181b",
+        950: "#ffd185",
       },
     },
     borderWidth: {
