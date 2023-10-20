@@ -4,13 +4,14 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     colors: {
       orange: "#ffd185",
       transparent: "transparent",
       primary: {
-        50: "#fff3f1",
+        50: "#fff3f1", //
         100: "#ffe4df",
         200: "#ffcec5",
         300: "#ffac9d",
@@ -41,5 +42,5 @@ module.exports = {
     },
     extend: {},
   },
-  plugins: [],
+  plugins: [require("flowbite/plugin")],
 };

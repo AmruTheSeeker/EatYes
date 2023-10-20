@@ -1,8 +1,8 @@
 import { ScreenSize } from "@/components/sharedui/screenSize";
 import "@/styles/globals.css";
-import { Inter } from "next/font/google";
+import { Lato } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const lato = Lato({ subsets: ["latin"],weight:"400" });
 
 export const metadata = {
   title: "EatYes!",
@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={lato.className}>
         <ScreenSize>{children}</ScreenSize>
       </body>
     </html>
