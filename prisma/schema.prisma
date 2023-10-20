@@ -21,11 +21,17 @@ model User {
   tall            Int
   recent_weight   Int
   profile_picture String
-  Goals           Goals[]
-  CaloryHistory   CaloryHistory[]
+  goals           String
+  calory_history  CaloryHistory[]
+  UserGoals       UserGoals[]
 }
 
 model Goals {
+  id           String  @id @default(cuid())
+  goal_options String
+}
+
+model UserGoals {
   id           String @id @default(cuid())
   goal_options String
   goal_weight  String
@@ -38,6 +44,7 @@ model Food {
   id            String          @id @default(cuid())
   name          String
   calory        Int
+  gram        String
   CaloryHistory CaloryHistory[]
 }
 

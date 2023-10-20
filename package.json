@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@prisma/client": "^5.4.2",
+    "bcrypt": "^5.1.1",
+    "jsonwebtoken": "^9.0.2",
     "lato-font": "^3.0.0",
     "lucide-react": "^0.285.0",
     "next": "13.5.4",
