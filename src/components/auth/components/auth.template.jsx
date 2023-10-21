@@ -19,12 +19,12 @@ export const AuthTemplate = ({ children }) => {
   return (
     <main className="grid grid-cols-1 lg:grid-cols-2 h-screen">
       <Link href="/" className="fixed top-9 left-9">
-        <button className="btnOutline lg:btnGhost lg:text-secondary-950 lg:hover:text-secondary-100 flex items-center gap-1">
+        <button className="btnOutline lg:btnGhost lg:text-secondary-900 lg:hover:text-secondary-200 flex items-center gap-1">
           <ChevronLeft size={18} />
           back to homes
         </button>
       </Link>
-      <section className="hidden lg:block bg-secondary-50 p-8"></section>
+      <section className="hidden lg:block bg-secondary-200 p-8"></section>
       <section className="flex justify-center items-center">{children}</section>
     </main>
   );

@@ -32,52 +32,54 @@ export default function Page() {
         {/* button 1 */}
         <div className="m-8 max-w-[360px] mx-auto mt-8">
           <button
-            className="btnSecondary w-[360px] text-3xl p-4 mt-2 bg-blue-500"
+            className="btnSecondary w-[360px] text-3xl p-4 mt-2 bg-blue-500 text-secondary-200"
             onClick={() => router.push("/goal")}
           >
             Not Very Active
           </button>
           <div className="mx-auto mt-2 mb-2">
-            <p className="text-primary-600">*Mostly just sitting</p>
+            <p className="text-secondary-400">*Mostly just sitting</p>
           </div>
         </div>
 
         {/* button 2 */}
         <div className="m-8 max-w-[360px] mx-auto mt-8">
           <button
-            className="btnSecondary w-[360px] text-3xl p-4 mt-2  bg-blue-500"
+            className="btnSecondary w-[360px] text-3xl p-4 mt-2  bg-blue-500 text-secondary-200"
             onClick={() => router.push("#")}
           >
             Lightly Active
           </button>
           <div className="mx-auto mt-2 mb-2">
-            <p className="text-primary-600">*Often walking activity</p>
+            <p className="text-secondary-400">*Often walking activity</p>
           </div>
         </div>
 
         {/* button 3 */}
         <div className="m-8 max-w-[360px] mx-auto mt-8">
           <button
-            className="btnSecondary w-[360px] text-3xl p-4 mt-2  bg-blue-500"
+            className="btnSecondary w-[360px] text-3xl p-4 mt-2  bg-blue-500 text-secondary-200"
             onClick={() => router.push("#")}
           >
             Active
           </button>
           <div className="mx-auto mt-2 mb-2">
-            <p className="text-primary-600">*Have a lot of physical activity</p>
+            <p className="text-secondary-400">
+              *Have a lot of physical activity
+            </p>
           </div>
         </div>
 
         {/* button 4 */}
         <div className="m-8 max-w-[360px] mx-auto mt-8">
           <button
-            className="btnSecondary w-[360px] text-3xl p-4 mt-2  bg-blue-500"
+            className="btnSecondary w-[360px] text-3xl p-4 mt-2  bg-blue-500 text-secondary-200"
             onClick={() => router.push("#")}
           >
             Very Active
           </button>
           <div className="mx-auto mt-2 mb-2">
-            <p className="text-primary-600">
+            <p className="text-secondary-400">
               *Have a lot of heavy physical activity
             </p>
           </div>

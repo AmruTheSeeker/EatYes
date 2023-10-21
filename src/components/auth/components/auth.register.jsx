@@ -9,31 +9,35 @@ export const Register = () => {
   return (
     <main className="w-[360px] space-y-8">
       <div className="space-y-2">
-        <h3>Register</h3>
-        <p>Hello! join as author</p>
+        <h3 className="font-bold text-4xl">Register</h3>
+        <h4>Hello! let's begin our calory adventure</h4>
       </div>
       <div className="space-y-2">
         <div className="grid grid-cols-2 gap-2">
           <input
             name="firstName"
-            placeholder="john"
+            placeholder="Crayon"
             onChange={handleChangeRegisterData}
+            className="bg-secondary-200"
           />
           <input
             name="lastName"
-            placeholder="doe"
+            placeholder="Shinchan"
             onChange={handleChangeRegisterData}
+            className="bg-secondary-200"
           />
         </div>
         <input
           name="username"
           placeholder="username"
           onChange={handleChangeRegisterData}
+          className="bg-secondary-200"
         />
         <input
           name="email"
           placeholder="email@yours.com"
           onChange={handleChangeRegisterData}
+          className="bg-secondary-200"
         />
         <input
           name="password"

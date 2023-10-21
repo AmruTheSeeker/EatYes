@@ -17,7 +17,7 @@ export default function Page() {
       </div>
       <div>
         <button
-          className="btnSecondary w-[250px] h-[50px] text-3xl"
+          className="btnSecondary w-[250px] h-[50px] text-3xl text-secondary-200"
           onClick={() => router.push("/dashboard")}
         >
           I Wanna Eat!

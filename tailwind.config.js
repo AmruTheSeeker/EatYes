@@ -11,30 +11,30 @@ module.exports = {
       orange: "#ffd185",
       transparent: "transparent",
       primary: {
-        50: "#fff3f1", //
-        100: "#ffe4df",
-        200: "#ffcec5",
-        300: "#ffac9d",
-        400: "#ff7b64",
-        500: "#ff4d2e",
-        600: "#ed3515",
-        700: "#c8290d",
-        800: "#a5250f",
-        900: "#882514",
-        950: "#ffd185",
+        50: "#fff3f1", // merah abu-abu
+        100: "#ffe4df", // merah agak transparant
+        200: "#ffcec5", // merah less transparant
+        300: "#ffac9d", // lebih merah
+        400: "#ff7b64", // lebih merah
+        500: "#ff4d2e", // lebih merah
+        600: "#ed3515", // lebih merah
+        700: "#c8290d", // lebih merah
+        800: "#a5250f", // lebih merah
+        900: "#882514", // lebih merah
+        950: "#ffd185", // Orange (warna utama BG EatYes)
       },
       secondary: {
-        50: "#f7f7f8",
-        100: "#efeef0",
-        200: "#dbd9de",
-        300: "#bab8c1",
-        400: "#94919f",
-        500: "#777384",
-        600: "#615d6c",
+        50: "#47525E", // Font : Black 1 (EatYes)
+        100: "#343F4B", // Font : Black 2 (EatYes)
+        200: "#FFFFFF", // Font : White (EatYes)
+        300: "#D62829", // Font : Red 1 (EatYes)
+        400: "#F95F62", // Font : Red 2 (EatYes)
+        500: "#67C740", // Font : Green (EatYes)
+        600: "#00A6FF", // Button : Blue (EatYes)
         700: "#4f4c58",
         800: "#44414b",
         900: "#3b3941",
-        950: "#ffd185",
+        950: "#ffd185", // Orange (warna utama BG Eatyes)
       },
     },
     borderWidth: {
