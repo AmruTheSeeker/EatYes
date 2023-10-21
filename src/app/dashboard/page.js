@@ -3,9 +3,9 @@ import { CaloryCard } from "@/components/sharedui/caloryCard";
 
 export default function Page() {
   return (
-    <div >
+    <div>
       <Header />
       <CaloryCard />
     </div>
   );
-  }
+}
