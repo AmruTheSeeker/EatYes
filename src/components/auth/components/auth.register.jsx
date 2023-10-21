@@ -9,8 +9,8 @@ export const Register = () => {
   return (
     <main className="w-[360px] space-y-8">
       <div className="space-y-2">
-        <h3>Register</h3>
-        <p>Hello! join as author</p>
+        <h3 className="font-bold text-4xl">Register</h3>
+        <h4>Hello! let's begin our calory adventure</h4>
       </div>
       <div className="space-y-2">
         <div className="grid grid-cols-2 gap-2">
