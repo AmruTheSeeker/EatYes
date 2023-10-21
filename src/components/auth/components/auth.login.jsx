@@ -9,7 +9,7 @@ export const Login = () => {
         <h4>Welcome back, please do login</h4>
       </div>
       <div className="space-y-2">
-        <input name="email" placeholder="email@yours.com" />
+        <input name="email" placeholder="email@yours.com" className="bg-secondary-200"/>
         <input name="password" type="password" placeholder="password" />
         <button className="w-full text-secondary-200">Log In</button>
       </div>

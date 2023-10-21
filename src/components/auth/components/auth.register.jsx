@@ -16,24 +16,28 @@ export const Register = () => {
         <div className="grid grid-cols-2 gap-2">
           <input
             name="firstName"
-            placeholder="john"
+            placeholder="Crayon"
             onChange={handleChangeRegisterData}
+            className="bg-secondary-200"
           />
           <input
             name="lastName"
-            placeholder="doe"
+            placeholder="Shinchan"
             onChange={handleChangeRegisterData}
+            className="bg-secondary-200"
           />
         </div>
         <input
           name="username"
           placeholder="username"
           onChange={handleChangeRegisterData}
+          className="bg-secondary-200"
         />
         <input
           name="email"
           placeholder="email@yours.com"
           onChange={handleChangeRegisterData}
+          className="bg-secondary-200"
         />
         <input
           name="password"
