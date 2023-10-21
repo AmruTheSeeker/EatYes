@@ -10,15 +10,18 @@
   },
   "dependencies": {
     "@prisma/client": "^5.4.2",
-    "flowbite-react": "^0.6.4",
     "bcrypt": "^5.1.1",
+    "flowbite-react": "^0.6.4",
+    "jose": "^4.15.4",
+    "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "lato-font": "^3.0.0",
     "lucide-react": "^0.285.0",
     "next": "13.5.4",
     "prisma": "^5.4.2",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-hot-toast": "^2.4.1"
   },
   "devDependencies": {
     "autoprefixer": "^10",

@@ -35,7 +35,7 @@ export async function POST(req) {
       data: payload,
       message: "User login successfully",
     });
-    res.cookies.set("token", token);
+    // res.cookies.set("token", token);
 
     return res;
   } catch (error) {
