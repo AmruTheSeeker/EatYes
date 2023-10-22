@@ -14,7 +14,7 @@ export const Login = () => {
         <h4>Welcome back, please do login</h4>
       </div>
       <div className="space-y-2">
-// <<<<<<< API-register-and-login
+{/* // <<<<<<< API-register-and-login */}
         <input
           name="email"
           placeholder="email@yours.com"
@@ -31,12 +31,12 @@ export const Login = () => {
           Log In
         </button>
       </div>
-      <p>
+      <div>
         Don't have an account ?{" "}
         <Link href="/register">
           <span className="link">Register</span>
         </Link>
-      </p>
+      </div>
     </main>
   );
 };
