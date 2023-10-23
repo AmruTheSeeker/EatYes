@@ -1,11 +1,11 @@
 import { Header } from "@/components/sharedui/guestHeader";
-import { CaloryCard } from "@/components/sharedui/caloryCard";
+import { CircularCalory } from "@/components/sharedui/circularCalory";
 
 export default function Page() {
   return (
     <div>
       <Header />
-      <CaloryCard />
+      <CircularCalory />
     </div>
   );
 }
