@@ -9,7 +9,7 @@ export const Header = () => {
   return (
     <div className="flex justify-center my-4">
       <div className="flex justify-between w-full">
-        <div className="grid">
+        <div className="grid gap-2">
           <button
             className="px-3 py-1.5 bg-secondary-500 rounded-full"
             onClick={() => router.push("/account")}
