@@ -1,13 +1,11 @@
 import { Header } from "@/components/sharedui/guestHeader";
-import { CaloryCard } from "@/components/sharedui/caloryCard";
-import { Figma } from "@/components/sharedui/labFigma";
+import { CircularCalory } from "@/components/sharedui/circularCalory";
 
 export default function Page() {
   return (
     <div>
-      {/* <Figma /> */}
       <Header />
-      <CaloryCard />
+      <CircularCalory />
       <h1>Ini ceritanya USER WKWKWK</h1>
     </div>
   );

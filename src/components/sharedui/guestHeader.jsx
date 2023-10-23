@@ -20,19 +20,19 @@ export const Header = () => {
         </div>
 
         <div className="flex space-x-4">
-          <div className="flex items-center">
+          <div className="flex items-center mt-[-40px]">
             <Link
               href="/register"
               className="flex flex-col -space-y-2 justify-center"
             >
               <>
-                <h5>Welcome,</h5>
-                <h5>Guest</h5>
+                <h6>Welcome,</h6>
+                <h6>Guest</h6>
               </>
             </Link>
           </div>
           <Link href="/register">
-            <Avatar rounded size="sm" />
+            <Avatar rounded size="md" />
           </Link>
         </div>
       </div>
