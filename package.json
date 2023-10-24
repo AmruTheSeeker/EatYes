@@ -11,6 +11,7 @@
   "dependencies": {
     "@prisma/client": "^5.4.2",
     "bcrypt": "^5.1.1",
+    "bootstrap": "^5.3.2",
     "flowbite-react": "^0.6.4",
     "jose": "^4.15.4",
     "js-cookie": "^3.0.5",
@@ -20,6 +21,7 @@
     "next": "^13.5.6",
     "prisma": "^5.4.2",
     "react": "^18",
+    "react-bootstrap": "^2.9.1",
     "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
