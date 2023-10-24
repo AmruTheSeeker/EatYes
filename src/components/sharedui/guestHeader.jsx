@@ -26,8 +26,8 @@ export const Header = () => {
               className="flex flex-col -space-y-2 justify-center"
             >
               <>
-                <h6>Welcome,</h6>
-                <h6>Guest</h6>
+                <h6 className="font-bold">Welcome,</h6>
+                <h6 className="font-bold">Guest</h6>
               </>
             </Link>
           </div>
