@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { chewy } from "@/app/font";
 
 
 export const Analysis = () => {
@@ -22,10 +23,31 @@ export const Analysis = () => {
               borderWidth: 4,
             }}
           >
-            <div>
+            <div className="flex ml-5 mt-4">
               <h6 className="font-bold text-xs">
                 End month weight prediction based on calory history
               </h6>
+            </div>
+            <div className="flex ml-6">
+              <div>
+                <h1
+                  className={chewy.className}
+                  style={{ color: "#F95F62", fontSize: "80px" }}
+                >
+                  70
+                </h1>
+              </div>
+              <div className="mt-8">
+                <h4
+                  className={chewy.className}
+                  style={{ color: "#F95F62", fontSize: "40px" }}
+                >
+                  kg
+                </h4>
+              </div>
+              <div>
+                
+              </div>
             </div>
           </div>
           <div
@@ -35,7 +57,7 @@ export const Analysis = () => {
               borderWidth: 4,
             }}
           >
-            <div>
+            <div className="flex ml-5 mt-4">
               <h6 className="font-bold text-xs">
                 Most contributed food to your calory :
               </h6>

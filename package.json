@@ -25,7 +25,8 @@
     "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
-    "recharts": "^2.9.0"
+    "recharts": "^2.9.0",
+    "recoil": "^0.7.7"
   },
   "devDependencies": {
     "autoprefixer": "^10",
