@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useEffect } from "react"; 
-import { Modal} from "flowbite-react";
+import { Modal, Button} from "flowbite-react";
 
 
 export const BMIModal = () => {
@@ -28,19 +28,21 @@ return (
     >
       Calculate Your BMI
     </button>
-
+ 
     <Modal show={modal} onHide={() => setModal(false)}>
       <Modal.Header>
         <h1>Calculate Your BMI</h1>
       </Modal.Header>
       <Modal.Body>
+        <div className="text-secondary-900 font-bold">Weight (kg)</div>
         <input
           className="font-black"
           type="number"
-          placeholder="75 Weight (kg)"
+          placeholder="Weight (kg)"
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
         />
+        <div className="text-secondary-900 font-bold">Height (cm)</div>
         <input
           className="font-black"
           type="number"

@@ -5,6 +5,7 @@ import { CircularProgressbarWithChildren, buildStyles  } from "react-circular-pr
 import "react-circular-progressbar/dist/styles.css";
 import { chewy } from "@/app/font";
 import { useRouter } from "next/navigation";
+import BMRCalculator from "./bmr";
 
 
 export const CircularCalory = () => {
@@ -27,6 +28,9 @@ export const CircularCalory = () => {
           >
             Calories
           </h1>
+          <div className="mr-[50px] font-bold">
+            <BMRCalculator />
+          </div>
           {/* <div className="flex items-center text-slate-200 bg-[rgb(99,163,178)] rounded-lg px-2 py-1">
           graphic
         </div> */}
@@ -66,12 +70,12 @@ export const CircularCalory = () => {
       {/* CALORY HISTORIES FUNCTION */}
       <div className="relative">
         <button
-          className="absolute bottom-40 mb-15 right-6 px-7 py-1.5 bg-secondary-400 rounded-full"
+          className="absolute bottom-1 right-6 px-7 py-1.5 bg-secondary-400 rounded-full"
           onClick={() => router.push("/login")}
         >
           <p className="text-center font-bold text-secondary-200">Histories</p>
         </button>
-        <div className="absolute bottom-[90px] right-1 px-3">
+        <div className="absolute bottom-[125px] right-1 px-3">
           <h4 className="text-center font-bold">Base Calory Goals</h4>
           <div className="text-center">
             <h6
