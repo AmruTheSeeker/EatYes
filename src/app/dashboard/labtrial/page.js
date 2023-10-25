@@ -1,7 +1,7 @@
 import { Header } from "@/components/sharedui/guestHeader";
 import { CaloryCard } from "@/components/sharedui/caloryCard";
 import { GraphGuest } from "@/components/sharedui/userGraph";
-import { BMIPopUp } from "@/components/sharedui/ModalBMIPop";
+import { Analysis } from "@/components/sharedui/analysis";
 
   
 export default function Page() {
@@ -10,8 +10,7 @@ export default function Page() {
       <Header />
       <CaloryCard />
       <GraphGuest />
-      <BMIPopUp />
-
+      <Analysis/>
     </div>
   );
 }
