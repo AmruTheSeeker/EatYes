@@ -5,8 +5,7 @@ import { CircularProgressbarWithChildren, buildStyles  } from "react-circular-pr
 import "react-circular-progressbar/dist/styles.css";
 import { chewy } from "@/app/font";
 import { useRouter } from "next/navigation";
-import BMRCalculator from "./bmr";
-
+import { BMRPopUp } from "./modalPop";
 
 export const CircularCalory = () => {
   const router = useRouter();
@@ -29,7 +28,7 @@ export const CircularCalory = () => {
             Calories
           </h1>
           <div className="mr-[50px] font-bold">
-            <BMRCalculator />
+            <BMRPopUp />
           </div>
           {/* <div className="flex items-center text-slate-200 bg-[rgb(99,163,178)] rounded-lg px-2 py-1">
           graphic

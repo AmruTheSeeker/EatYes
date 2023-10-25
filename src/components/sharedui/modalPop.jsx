@@ -1,17 +1,15 @@
-"use client"
+'use client';
 
-import React, { useState } from "react";
-import { Modal } from "flowbite-react";
-
-const BMRCalculator = () => {
+import { useState } from 'react';
+import { Modal } from 'flowbite-react';
+ 
+export const BMRPopUp = () => {
   const [age, setAge] = useState(0);
   const [gender, setGender] = useState("male");
   const [weight, setWeight] = useState(0);
   const [height, setHeight] = useState(0);
   const [activityLevel, setActivityLevel] = useState(1.2);
   const [bmr, setBMR] = useState(0);
-   const [modal, setModal] = useState(false);
-
   const calculateBMR = () => {
     let bmr = 0;
     if (gender === "male") {
@@ -26,21 +24,21 @@ const BMRCalculator = () => {
     calculateBMR(true);
   };
 
+  const [openModal, setOpenModal] = useState(0);
+  const props = { openModal, setOpenModal };
 
   return (
-    <div>
-      <button
-        variant="primary"
-        onClick={() => {
-          setModal(true);
-        }}
-      >
-        My Calorie Needs
+    <>
+      <button onClick={() => props.setOpenModal("default")}>
+        My Calory Needs
       </button>
-      <Modal show={modal} onHide={() => setModal(false)}>
+      <Modal
+        show={props.openModal === "default"}
+        onClose={() => props.setOpenModal(undefined)}
+      >
+        <Modal.Header>Basal Metabolic Rate (BMR) Calculation</Modal.Header>
         <Modal.Body>
           <div>
-            <h1>BMR Calculator</h1>
             <div className="text-secondary-300">
               <label>Age: </label>
               <input
@@ -100,17 +98,22 @@ const BMRCalculator = () => {
               </select>
             </div>
 
-            <button onClick={handleCalculate} className="w-full">
+            <button onClick={handleCalculate} className="w-full mt-5">
               Calculate BMR
             </button>
           </div>
-          <div>
-            <h2>You needs : {bmr.toFixed(0)} calories per day</h2>
+          <div className='mt-5'>
+            <h2>You need : {bmr.toFixed(0)} calories per day</h2>
           </div>
-        </Modal.Body> 
+        </Modal.Body>
+        <Modal.Footer>
+          <button className='bg-secondary-400' onClick={() => props.setOpenModal(undefined)}>
+            Close
+          </button>
+        </Modal.Footer>
       </Modal>
-    </div>
+    </>
   );
-};
+} 
 
-export default BMRCalculator;
+
