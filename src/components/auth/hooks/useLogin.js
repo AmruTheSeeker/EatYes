@@ -34,7 +34,7 @@ export const useLogin = () => {
     // }
 
     // console.log(token);
-    router.push("/dashboard");
+    router.push("/dashboard/user");
   };
 
   return { loginData, handleChangeLoginData, handleSubmitLoginData };

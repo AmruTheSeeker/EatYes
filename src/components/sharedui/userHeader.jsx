@@ -4,7 +4,7 @@ import { Avatar, Datepicker } from "flowbite-react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-export const Header = () => {
+export const UserHeader = () => {
   const router = useRouter();
   return (
     <div className="flex justify-center my-4">
@@ -27,12 +27,12 @@ export const Header = () => {
             >
               <>
                 <h6 className="font-bold">Welcome,</h6>
-                <h6 className="font-bold">Guest</h6>
+                <h6 className="font-bold">Doraemon</h6>
               </>
             </Link>
           </div>
           <Link href="/register">
-            <Avatar rounded size="lg" />
+            <Avatar img="/doraemonhead.png" rounded size="lg" />
           </Link>
         </div>
       </div>
