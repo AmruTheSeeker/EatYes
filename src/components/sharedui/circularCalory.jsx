@@ -7,9 +7,11 @@ import { chewy } from "@/app/font";
 import { useRouter } from "next/navigation";
 import { BMRPopUp } from "./modalPop";
 
+
 export const CircularCalory = () => {
   const router = useRouter();
   const value = 500;
+
   return (
     <div
       className="bg-secondary-200 w-full h-[300px] rounded-3xl"
@@ -70,7 +72,7 @@ export const CircularCalory = () => {
       <div className="relative">
         <button
           className="absolute bottom-1 right-6 px-7 py-1.5 bg-secondary-400 rounded-full"
-          onClick={() => router.push("/login")}
+          onClick={() => router.push("/dashboard/user/histories")}
         >
           <p className="text-center font-bold text-secondary-200">Histories</p>
         </button>
@@ -81,7 +83,7 @@ export const CircularCalory = () => {
               className={chewy.className}
               style={{ color: "#67C740", fontSize: "20px" }}
             >
-              2500 Calories
+              2000 Calories
             </h6>
           </div>
           <div className="absolute bottom-[-70px] text-center">
@@ -97,4 +99,4 @@ export const CircularCalory = () => {
       </div>
     </div>
   );
-};
+}; 

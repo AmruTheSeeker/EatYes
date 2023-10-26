@@ -4,7 +4,7 @@ import { counterState } from "@/recoil/counter"
 import { useRecoilValue } from "recoil"
 
 export const Counter = () => {
-    return (
-        <div>Counter</div>
-    )
+    const counter =  useRecoilValue(counterState)
+    return <div className="text-secondary-900">Itungan: {counter}</div>
+    
 }

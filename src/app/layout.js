@@ -2,6 +2,7 @@ import { ScreenSize } from "@/components/sharedui/screenSize";
 import "@/styles/globals.css";
 import { Lato } from "next/font/google";
 import { RootProvider } from "@/components/Provider/RootProvider";
+import { Provider } from "@/components/Provider/Provider";
 
 const lato = Lato({ subsets: ["latin"], weight: "400" });
 
@@ -14,9 +15,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={lato.className}>
-        <ScreenSize>
-          <RootProvider>{children}</RootProvider>
-        </ScreenSize>
+        <Provider>
+          <ScreenSize>
+            <RootProvider>{children}</RootProvider>
+          </ScreenSize>
+        </Provider>
       </body>
     </html>
   );

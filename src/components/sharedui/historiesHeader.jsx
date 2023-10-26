@@ -13,9 +13,11 @@ export const UserHeader = () => {
         <div className="grid gap-2">
           <button
             className="px-3 py-1.5 bg-secondary-500 rounded-full"
-            onClick={() => router.push("/dashboard/user/histories")}
+            onClick={() => router.push("/dashboard/user")}
           >
-            <h4 className="text-center text-secondary-200">Today!</h4>
+            <h4 className="text-center text-secondary-200">
+              Back to Dashboard
+            </h4>
           </button>
           <Datepicker className="max-w-[160px]" />
         </div>

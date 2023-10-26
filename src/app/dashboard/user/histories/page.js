@@ -1,4 +1,4 @@
-import { UserHeader } from "@/components/sharedui/userHeader";
+import { UserHeader } from "@/components/sharedui/historiesHeader";
 import { CaloryCard } from "@/components/sharedui/caloryCard";
 import { GraphGuest } from "@/components/sharedui/userGraph";
 import { Analysis } from "@/components/sharedui/analysis";
