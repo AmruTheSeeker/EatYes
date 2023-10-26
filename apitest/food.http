@@ -1,7 +1,5 @@
-POST http://localhost:3000/api/v1/auth/foods
+GET http://localhost:3000/api/v1/auth/foods?name=tempe
 
-{
-    "name": "Tahu Goreng",
-    "gram": "100",
-    "calory": 147
-}
+# {
+#     "name": "nasi putih",
+# }

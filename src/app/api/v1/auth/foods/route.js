@@ -1,22 +1,24 @@
 import { prisma } from "@/utils/prisma";
 import { NextResponse } from "next/server";
 
-export async function POST(req) {
-  const { name, gram, calory } = await req.json();
+export async function GET(req, res) {
+  const searchParams = req.nextUrl.searchParams;
+  const name = searchParams.get("name");
 
   try {
-    const createFood = await prisma.food.create({
-      data: {
+    const getFood = await prisma.food.findMany({
+      where: {
         name,
-        gram,
-        calory,
       },
     });
+
     return NextResponse.json(
-      { message: "Food Added to the List" },
+      { data: getFood },
+      { message: "Foods" },
       { status: 200 }
     );
   } catch (error) {
+    console.log(error);
     return NextResponse.json({ message: "Error" }, { status: 500 });
   }
 }
