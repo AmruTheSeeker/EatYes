@@ -3,9 +3,10 @@ import React from "react";
 import { Avatar, Datepicker } from "flowbite-react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-
+   
 export const UserHeader = () => {
   const router = useRouter();
+
   return (
     <div className="flex justify-center my-4">
       <div className="flex justify-between w-full">
@@ -14,7 +15,7 @@ export const UserHeader = () => {
             className="px-3 py-1.5 bg-secondary-500 rounded-full"
             onClick={() => router.push("/account")}
           >
-            <p className="text-center text-secondary-200">Today!</p>
+            <h4 className="text-center text-secondary-200">Today!</h4>
           </button>
           <Datepicker className="max-w-[160px]" />
         </div>

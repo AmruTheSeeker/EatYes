@@ -1,6 +1,17 @@
-import React from "react";
+"use client"
 
+import React from "react";
+import { useState, useEffect } from "react";
+ 
+ 
 export const ScreenSize = ({ children }) => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+      
+  if (!isClient) return null;  
   return (
     <main>
       <div>{children}</div>

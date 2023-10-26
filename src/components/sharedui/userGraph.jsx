@@ -11,7 +11,7 @@ import {
   ResponsiveContainer,
   Legend
 } from "recharts";;
-
+   
 const data = [
   {
     name: "Sunday",
@@ -49,6 +49,7 @@ const data = [
     GoalCalory: 3000,
   },
 ];
+
 
 export const GraphGuest = () => { 
     return (
