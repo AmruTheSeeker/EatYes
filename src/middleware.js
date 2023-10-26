@@ -23,5 +23,5 @@ export default function middleware(request) {
 }
 
 export const config = {
-  matcher: "/dashboard/user2",
+  matcher: ["/dashboard/:path*", "/search", "/account", "/search"],
 };
