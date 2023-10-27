@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 export const AuthTemplate = ({ children }) => {
   const pathname = usePathname();
@@ -15,7 +16,7 @@ export const AuthTemplate = ({ children }) => {
       </section>
     );
   }
-
+ 
   return (
     <main className="grid grid-cols-1 lg:grid-cols-2 h-screen">
       <Link href="/" className="fixed top-9 left-9">
@@ -24,7 +25,15 @@ export const AuthTemplate = ({ children }) => {
           back to homes
         </button>
       </Link>
-      <section className="hidden lg:block bg-secondary-200 p-8"></section>
+      <section className="hidden lg:block bg-secondary-200 p-8">
+        <Image
+          src="/browsing.jpg"
+          width={600}
+          height={150}
+          objectFit="cover"
+          alt="Background image"
+        />  
+      </section>
       <section className="flex justify-center items-center">{children}</section>
     </main>
   );

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Avatar, Datepicker } from "flowbite-react";
+import { Avatar, Datepicker, Dropdown } from "flowbite-react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -31,9 +31,20 @@ export const Header = () => {
               </>
             </Link>
           </div>
-          <Link href="/register">
-            <Avatar rounded size="lg" />
-          </Link>
+          <Dropdown
+            arrowIcon={false}
+            inline
+            label={
+              <Avatar
+                alt="User settings"
+                rounded
+                size="lg"
+                className="bg-secondary-950"
+              />
+            }
+>
+            <Dropdown.Item onClick={() => router.push("/login")}> Login</Dropdown.Item>
+          </Dropdown>
         </div>
       </div>
     </div>

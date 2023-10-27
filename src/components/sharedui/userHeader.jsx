@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
-import { Avatar, Datepicker } from "flowbite-react";
+import { Avatar, Datepicker, Dropdown } from "flowbite-react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import Cookies from "js-cookie";
 
 export const UserHeader = () => {
@@ -36,7 +35,27 @@ export const UserHeader = () => {
               </>
             </div>
           </div>
-          <Avatar onClick={logout} img="/doraemonhead.png" rounded size="lg" />
+          <Dropdown
+            arrowIcon={false}
+            inline
+            label={
+              <Avatar
+                alt="User settings"
+                img="/doraemonhead.png"
+                rounded
+                size="lg"
+                className="bg-secondary-950"
+              />
+            }
+          >
+            <Dropdown.Header>
+              <span className="block text-sm">Doraemon</span>
+              <span className="block truncate text-sm font-medium">
+                doraemon@gmail.com
+              </span>
+            </Dropdown.Header>
+            <Dropdown.Item onClick={logout}> Sign out</Dropdown.Item>
+          </Dropdown>
         </div>
       </div>
     </div>
