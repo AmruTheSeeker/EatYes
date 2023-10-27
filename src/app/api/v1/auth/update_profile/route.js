@@ -1,25 +1,26 @@
 import { prisma } from "@/utils/prisma";
-import bcrypt from "bcrypt";
 import { NextResponse } from "next/server";
+import { getCookies, getCookie } from "cookies-next";
+import * as jose from "jose";
 
-export async function PATCH(req) {
-  const { email, password, age, tall, gender, recent_weight } =
+export async function PATCH(req, res) {
+  const { age, height, gender, weight, bmrFix, activityLevel } =
     await req.json();
 
+  const cookie = getCookie("eatyes-token", { req, res });
+  const dataToken = jose.decodeJwt(cookie);
+  const email = dataToken.email;
+  const ageFix = parseInt(age);
+  const bmr = parseInt(bmrFix);
+
   try {
+    const tall = parseInt(height);
+    const recent_weight = parseInt(weight);
+
     const findUser = await prisma.user.findUnique({ where: { email } });
 
     if (!findUser) {
       return NextResponse.json({ error: "User not found" }, { status: 400 });
-    }
-
-    const matchPassword = await bcrypt.compare(password, findUser.password);
-
-    if (!matchPassword) {
-      return NextResponse.json(
-        { error: "Invalid email or Password" },
-        { status: 400 }
-      );
     }
 
     const updateUser = await prisma.user.update({
@@ -28,9 +29,11 @@ export async function PATCH(req) {
       },
       data: {
         gender,
-        age,
+        age: ageFix,
         tall,
         recent_weight,
+        goals: activityLevel,
+        bmr,
       },
     });
 
@@ -51,6 +54,7 @@ export async function PATCH(req) {
 
     return res;
   } catch (error) {
+    console.log(error);
     return NextResponse.json({ message: "Error" }, { status: 500 });
   }
 }

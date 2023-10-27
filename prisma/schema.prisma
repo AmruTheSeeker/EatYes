@@ -24,6 +24,7 @@ model User {
   recent_weight   Int
   profile_picture String
   goals           String
+  bmr             Int?
   calory_history  CaloryHistory[]
   UserGoals       UserGoals[]
 }

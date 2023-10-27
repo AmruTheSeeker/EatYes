@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Modal } from 'flowbite-react';
- 
+import { useState } from "react";
+import { Modal } from "flowbite-react";
+
 export const BMRPopUp = () => {
   const [age, setAge] = useState(0);
   const [gender, setGender] = useState("male");
@@ -10,13 +10,29 @@ export const BMRPopUp = () => {
   const [height, setHeight] = useState(0);
   const [activityLevel, setActivityLevel] = useState(1.2);
   const [bmr, setBMR] = useState(0);
-  const calculateBMR = () => {
+
+  const calculateBMR = async () => {
     let bmr = 0;
     if (gender === "male") {
       bmr = 88.362 + 13.397 * weight + 4.799 * height - 5.677 * age;
     } else {
       bmr = 447.593 + 9.247 * weight + 3.098 * height - 4.33 * age;
     }
+
+    const bmrFix = bmr.toFixed(0);
+    const res = await fetch(`/api/v1/auth/update_profile`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        gender,
+        age,
+        weight,
+        height,
+        bmrFix,
+        activityLevel,
+      }),
+    });
+    const data = await res.json();
+
     setBMR(bmr);
   };
 
@@ -102,18 +118,19 @@ export const BMRPopUp = () => {
               Calculate BMR
             </button>
           </div>
-          <div className='mt-5'>
+          <div className="mt-5">
             <h2>You need : {bmr.toFixed(0)} calories per day</h2>
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <button className='bg-secondary-400' onClick={() => props.setOpenModal(undefined)}>
+          <button
+            className="bg-secondary-400"
+            onClick={() => props.setOpenModal(undefined)}
+          >
             Close
           </button>
         </Modal.Footer>
       </Modal>
     </>
   );
-} 
-
-
+};
