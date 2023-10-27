@@ -17,14 +17,26 @@ export const useLogin = () => {
   };
 
   const handleSubmitLoginData = async () => {
-    toast.loading("Logging in...");
     const { email, password } = loginData;
+    if (!email || !password ) {
+      toast.error("fill email and password")
+      return
+      
+    }
+    toast.loading("Logging in...");
+
     const res = await fetch(`/api/v1/auth/login`, {
       method: "POST",
       body: JSON.stringify({ email, password }),
     });
-    const { token, data } = await res.json();
+    const { token, data, error } = await res.json();
     toast.remove();
+    console.log(token,data,error)
+
+    if (error) {
+      toast.error(error)
+      return
+    }
     Cookies.set("eatyes-token", JSON.stringify(token));
     Cookies.set("eatyes-data", JSON.stringify(data));
     toast.success("Logged in successfully!");
