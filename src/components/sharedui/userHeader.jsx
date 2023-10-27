@@ -3,9 +3,16 @@ import React from "react";
 import { Avatar, Datepicker } from "flowbite-react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-   
+import Cookies from "js-cookie";
+
 export const UserHeader = () => {
   const router = useRouter();
+
+  const logout = () => {
+    Cookies.remove("eatyes-data");
+    Cookies.remove("eatyes-token");
+    router.push(`/login`);
+  };
 
   return (
     <div className="flex justify-center my-4">
@@ -22,19 +29,14 @@ export const UserHeader = () => {
 
         <div className="flex space-x-4">
           <div className="flex items-center mt-[-40px]">
-            <Link
-              href="/dashboard/user"
-              className="flex flex-col -space-y-2 justify-center"
-            >
+            <div className="flex flex-col -space-y-2 justify-center">
               <>
                 <h6 className="font-bold">Welcome,</h6>
                 <h6 className="font-bold">Doraemon</h6>
               </>
-            </Link>
+            </div>
           </div>
-          <Link href="/dashboard/user">
-            <Avatar img="/doraemonhead.png" rounded size="lg" />
-          </Link>
+          <Avatar onClick={logout} img="/doraemonhead.png" rounded size="lg" />
         </div>
       </div>
     </div>
