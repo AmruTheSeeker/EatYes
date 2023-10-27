@@ -33,6 +33,6 @@ PATCH http://localhost:3000/api/v1/auth/update_profile
 POST http://localhost:3000/api/v1/auth/login
 
 {
-    "email": "test@gmail.com",
+    "email": "sdfsdfsdfs@dfsdfsdfsdfs.com",
     "password": "123456"
 }

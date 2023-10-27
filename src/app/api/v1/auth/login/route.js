@@ -16,10 +16,7 @@ export async function POST(req) {
     const matchPassword = await bcrypt.compare(password, findUser.password);
 
     if (!matchPassword) {
-      return NextResponse.json(
-        { error: "Invalid email or Password" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Invalid email or Password" }, { status: 400 });
     }
 
     const payload = {
@@ -39,6 +36,7 @@ export async function POST(req) {
 
     return res;
   } catch (error) {
+    console.log(error);
     return NextResponse.json({ message: "Error" }, { status: 500 });
   }
 }
