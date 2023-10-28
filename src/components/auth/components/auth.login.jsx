@@ -14,7 +14,7 @@ export const Login = () => {
         <h4>Welcome back, please do login</h4>
       </div>
       <div className="space-y-2">
-{/* // <<<<<<< API-register-and-login */}
+        {/* // <<<<<<< API-register-and-login */}
         <input
           name="email"
           placeholder="email@yours.com"
@@ -24,10 +24,14 @@ export const Login = () => {
         <input
           name="password"
           type="password"
-          placeholder="password"
+          placeholder="Password"
+          className="rounded-md"
           onChange={handleChangeLoginData}
         />
-        <button className="w-full text-secondary-200" onClick={handleSubmitLoginData}>
+        <button
+          className="w-full text-secondary-200"
+          onClick={handleSubmitLoginData}
+        >
           Log In
         </button>
       </div>

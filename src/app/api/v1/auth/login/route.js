@@ -4,6 +4,12 @@ import { NextResponse } from "next/server";
 import { sign } from "jsonwebtoken";
 
 export async function POST(req) {
+  const objectDate = new Date();
+  const day = objectDate.getDate();
+  const month = objectDate.getMonth();
+  const year = objectDate.getFullYear();
+  const dateNow = '"' + year + "-" + (month + 1) + "-" + day + '"';
+
   const { email, password } = await req.json();
 
   try {
@@ -16,13 +22,34 @@ export async function POST(req) {
     const matchPassword = await bcrypt.compare(password, findUser.password);
 
     if (!matchPassword) {
-      return NextResponse.json({ error: "Invalid email or Password" }, { status: 400 });
+      return NextResponse.json(
+        { error: "Invalid email or Password" },
+        { status: 400 }
+      );
     }
+
+    const id = findUser.id;
+    const userId = id.toString();
+    const findHistory = await prisma.caloryHistory.aggregate({
+      _sum: {
+        food_calory: true,
+      },
+      where: {
+        userId,
+        date: {
+          gte: new Date(dateNow).toISOString(),
+        },
+      },
+    });
+    const totalCalory = findHistory._sum.food_calory;
+    const caloryToday = totalCalory != null ? totalCalory : 0;
 
     const payload = {
       id: findUser.id,
-      name: findUser.name,
+      username: findUser.username,
       email: findUser.email,
+      bmr: findUser.bmr,
+      calory: caloryToday,
     };
 
     const token = sign(payload, process.env.JWT_SECRET, { expiresIn: "1d" });
@@ -32,7 +59,6 @@ export async function POST(req) {
       data: payload,
       message: "User login successfully",
     });
-    // res.cookies.set("token", token);
 
     return res;
   } catch (error) {

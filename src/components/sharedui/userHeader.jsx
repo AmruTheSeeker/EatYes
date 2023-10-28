@@ -3,9 +3,13 @@ import React from "react";
 import { Avatar, Datepicker, Dropdown } from "flowbite-react";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
+import * as jose from "jose";
 
 export const UserHeader = () => {
   const router = useRouter();
+  const cookie = Cookies.get("eatyes-token");
+  const token = JSON.parse(cookie);
+  const dataUser = jose.decodeJwt(token);
 
   const logout = () => {
     Cookies.remove("eatyes-data");
@@ -31,7 +35,7 @@ export const UserHeader = () => {
             <div className="flex flex-col -space-y-2 justify-center">
               <>
                 <h6 className="font-bold">Welcome,</h6>
-                <h6 className="font-bold">Doraemon</h6>
+                <h6 className="font-bold">{dataUser.username}</h6>
               </>
             </div>
           </div>
@@ -49,9 +53,9 @@ export const UserHeader = () => {
             }
           >
             <Dropdown.Header>
-              <span className="block text-sm">Doraemon</span>
+              <span className="block text-sm">{dataUser.username}</span>
               <span className="block truncate text-sm font-medium">
-                doraemon@gmail.com
+                {dataUser.email}
               </span>
             </Dropdown.Header>
             <Dropdown.Item onClick={logout}> Sign out</Dropdown.Item>

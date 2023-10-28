@@ -23,8 +23,8 @@ model User {
   tall            Int
   recent_weight   Int
   profile_picture String
-  goals           String
-  bmr             Int?
+  goals           Float
+  bmr             Int
   calory_history  CaloryHistory[]
   UserGoals       UserGoals[]
 }

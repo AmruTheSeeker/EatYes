@@ -11,7 +11,7 @@ export default function Page() {
       <CircularCalory />
       <BMIPopUp />
       <BodyMassIndex />
-      <ScanButton /> 
+      <ScanButton />
     </div>
   );
 }

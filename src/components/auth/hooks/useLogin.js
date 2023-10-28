@@ -18,10 +18,9 @@ export const useLogin = () => {
 
   const handleSubmitLoginData = async () => {
     const { email, password } = loginData;
-    if (!email || !password ) {
-      toast.error("fill email and password")
-      return
-      
+    if (!email || !password) {
+      toast.error("fill email and password");
+      return;
     }
     toast.loading("Logging in...");
 
@@ -31,21 +30,15 @@ export const useLogin = () => {
     });
     const { token, data, error } = await res.json();
     toast.remove();
-    console.log(token,data,error)
 
     if (error) {
-      toast.error(error)
-      return
+      toast.error(error);
+      return;
     }
     Cookies.set("eatyes-token", JSON.stringify(token));
     Cookies.set("eatyes-data", JSON.stringify(data));
     toast.success("Logged in successfully!");
 
-    // if (errorMessage) {
-    //   alert(errorMessage);
-    // }
-
-    // console.log(token);
     router.push("/dashboard/user");
   };
 

@@ -1,16 +1,22 @@
 "use client";
 
 import React from "react";
-import { CircularProgressbarWithChildren, buildStyles  } from "react-circular-progressbar";
+import {
+  CircularProgressbarWithChildren,
+  buildStyles,
+} from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { chewy } from "@/app/font";
 import { useRouter } from "next/navigation";
 import { BMRPopUp } from "./modalPop";
-
+import Cookies from "js-cookie";
+import * as jose from "jose";
 
 export const CircularCalory = () => {
   const router = useRouter();
-  const value = 500;
+  const cookie = Cookies.get("eatyes-token");
+  const token = JSON.parse(cookie);
+  const dataUser = jose.decodeJwt(token);
 
   return (
     <div
@@ -45,9 +51,9 @@ export const CircularCalory = () => {
               text={`${value}`}
             /> */}
               <CircularProgressbarWithChildren
-                value={value}
+                value={dataUser.calory}
                 maxValue={2500}
-                text={`${value}`}
+                text={`${dataUser.calory}`}
                 styles={buildStyles({
                   pathColor: "#F95F62",
                   textColor: "#F95F62",
@@ -72,7 +78,10 @@ export const CircularCalory = () => {
       <div className="relative">
         <button
           className="absolute bottom-1 right-6 px-7 py-1.5 bg-secondary-400 rounded-full"
-          onClick={() => router.push("/dashboard/user/histories")}
+          onClick={() => router.push(`/dashboard/user/histories`)}
+          // onClick={() =>
+          //   router.push(`/dashboard/user/histories/${dataUser.id}`)
+          // }
         >
           <p className="text-center font-bold text-secondary-200">Histories</p>
         </button>
@@ -83,7 +92,7 @@ export const CircularCalory = () => {
               className={chewy.className}
               style={{ color: "#67C740", fontSize: "20px" }}
             >
-              2000 Calories
+              {dataUser.bmr} Calories
             </h6>
           </div>
           <div className="absolute bottom-[-70px] text-center">
@@ -92,11 +101,11 @@ export const CircularCalory = () => {
               className={chewy.className}
               style={{ color: "#F95F62", fontSize: "20px" }}
             >
-              500 Calories
+              {dataUser.calory} Calories
             </h6>
           </div>
         </div>
       </div>
     </div>
   );
-}; 
+};

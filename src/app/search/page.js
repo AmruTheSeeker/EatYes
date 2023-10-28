@@ -28,6 +28,7 @@ export default function Page(request) {
       </div>
       <div className="mt-6">
         <TextInput
+          name="name"
           id="base"
           sizing="md"
           type="text"
@@ -35,12 +36,6 @@ export default function Page(request) {
           onChange={handleChangeSearchData}
         />
       </div>
-      {/* <input
-        name="name"
-        className="rounded-full bg-secondary-200"
-        placeholder="Mau makan apa?"
-        onChange={handleChangeSearchData}
-      /> */}
       <button
         className="w-[360px] mt-5 p-2 text-secondary-200 rounded-xl"
         onClick={handleSubmitSearchData}
