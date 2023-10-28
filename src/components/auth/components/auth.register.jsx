@@ -49,12 +49,12 @@ export const Register = () => {
           Register
         </button>
       </div>
-      <p>
+      <div className="text-black">
         Have an account ?{" "}
         <Link href="/login">
-          <span className="link">Login</span>
+          <span className="link text-secondary-600">Login</span>
         </Link>
-      </p>
+      </div>
     </main>
   );
 };

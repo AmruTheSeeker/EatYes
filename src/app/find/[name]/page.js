@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
+import Image from "next/image";
 
 async function getFoodBySlug(name) {
   const res = await fetch(
@@ -40,25 +41,40 @@ export default async function Page({ params }) {
 
   return (
     <main>
-      <div>
-        <h2>Your food is : {foodData.name}</h2>
-        <h3>Calories amount on it is {foodData.calory}</h3>
-      </div>
+      <div className="m-8 max-w-[360px] mx-auto mt-8">
+        <div className="flex justify-center">
+          <Image
+            src="/eating.png"
+            width={400}
+            height={400}
+            objectFit="cover"
+            alt="Eating image"
+          />
+        </div>
+        <div className="text-center">
+          <div>
+            <h2>Your food is : {foodData.name}</h2>
+          </div>
+          <div>
+            <h3>Calories amount on it is {foodData.calory}</h3>
+          </div>
+        </div>
 
-      <div>
-        <button
-          onClick={() => yesEat(foodData)}
-          className="btnSecondary w-[360px] mb-2 p-4 bg-blue-500 text-secondary-200"
-        >
-          Sure, i'll eat it. Why not?
-        </button>
-      </div>
-      <div>
-        <Link href={"/search"}>
-          <button className="btnSecondary w-[360px] mb-2 p-4 bg-blue-500 text-secondary-200">
-            It will be wise if i prefer not
+        <div className="mt-6">
+          <button
+            onClick={() => yesEat(foodData)}
+            className="btnSecondary w-[360px] text-md font-bold mb-2 p-4 bg-secondary-600 text-secondary-200 rounded-full"
+          >
+            Sure, i'll eat it. Why not?
           </button>
-        </Link>
+        </div>
+        <div>
+          <Link href={"/search"}>
+            <button className="btnSecondary w-[360px] text-md font-bold mb-2 p-4 bg-secondary-500 text-secondary-200 rounded-full">
+              It will be wise if i prefer not
+            </button>
+          </Link>
+        </div>
       </div>
     </main>
   );
