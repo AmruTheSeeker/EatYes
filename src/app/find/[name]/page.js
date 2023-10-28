@@ -60,7 +60,9 @@ export default async function Page({ params }) {
             <h2>Your food is : {foodData.name}</h2>
           </div>
           <div>
-            <h3>Calories amount on it is {foodData.calory}</h3>
+            <h3>
+              Calories amount on it is {foodData.calory}/{foodData.gram} g
+            </h3>
           </div>
         </div>
 
