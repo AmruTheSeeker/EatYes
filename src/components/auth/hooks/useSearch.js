@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 export const useSearch = () => {
   const router = useRouter();
@@ -15,8 +15,10 @@ export const useSearch = () => {
   };
 
   const handleSubmitSearchData = async () => {
+    toast.loading("Loading...");
     const { name } = searchData;
-
+    toast.remove();
+    toast.success("Here your food!");
     router.push(`/find/${name}`);
   };
 
