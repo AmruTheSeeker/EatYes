@@ -2,6 +2,8 @@
 
 import { useRouter } from "next/navigation";
 import { useSearch } from "@/components/auth/hooks/useSearch";
+import { TextInput } from "flowbite-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Page(request) {
@@ -10,20 +12,40 @@ export default function Page(request) {
   const router = useRouter();
   return (
     <div className="m-8 max-w-[360px] mx-auto mt-8">
-      <div className="mb-2 p-4 text-center">
-        <h1 style={{ color: "black", fontSize: "80px" }}>EatYes!</h1>
+      <div className="flex justify-center">
+        <Image
+          src="/eatYesLogo.png"
+          width={230}
+          height={230}
+          objectFit="cover"
+          alt="Background image"
+        />
       </div>
-      <input
+      <div className="text-center">
+        <h6>
+          "Let food be thy medicine and medicine be thy food."- Hippocrates
+        </h6>
+      </div>
+      <div className="mt-6">
+        <TextInput
+          id="base"
+          sizing="md"
+          type="text"
+          placeholder="What do you want to eat?"
+          onChange={handleChangeSearchData}
+        />
+      </div>
+      {/* <input
         name="name"
-        className="rounded-full"
+        className="rounded-full bg-secondary-200"
         placeholder="Mau makan apa?"
         onChange={handleChangeSearchData}
-      />
+      /> */}
       <button
-        className="btnSecondary w-[360px] mb-2 p-4 bg-blue-500 text-secondary-200"
+        className="w-[360px] mt-5 p-2 text-secondary-200 rounded-xl"
         onClick={handleSubmitSearchData}
       >
-        Cari
+        Search
       </button>
     </div>
   );

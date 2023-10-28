@@ -34,8 +34,8 @@ export default async function Page({ params }) {
   return (
     <main>
       <div>
-        <h2>Makanan yang kamu cari adalah : {foodData.name}</h2>
-        <h3>Jumlah kalori dalam makanan ini {foodData.calory}</h3>
+        <h2>Your food is : {foodData.name}</h2>
+        <h3>Calories amount on it is {foodData.calory}</h3>
       </div>
 
       <div>
@@ -43,13 +43,13 @@ export default async function Page({ params }) {
           onClick={() => yesEat(foodData)}
           className="btnSecondary w-[360px] mb-2 p-4 bg-blue-500 text-secondary-200"
         >
-          Saya makan
+          Sure, i'll eat it. Why not?
         </button>
       </div>
       <div>
         <Link href={"/search"}>
           <button className="btnSecondary w-[360px] mb-2 p-4 bg-blue-500 text-secondary-200">
-            gajadi deh
+            It will be wise if i prefer not
           </button>
         </Link>
       </div>

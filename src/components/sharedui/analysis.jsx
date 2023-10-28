@@ -23,18 +23,18 @@ export const Analysis = () => {
               borderWidth: 4,
             }}
           >
-            <div className="flex ml-5 mt-4">
-              <h6 className="font-bold text-xs">
-                End month weight prediction based on calory history
+            <div className="flex ml-4 mt-4">
+              <h6 className="font-bold text-xs text-center">
+                End month weight prediction based on calory history :
               </h6>
             </div>
-            <div className="flex ml-6">
+            <div className="flex ml-4">
               <div>
                 <h1
                   className={chewy.className}
                   style={{ color: "#F95F62", fontSize: "80px" }}
                 >
-                  70
+                  105
                 </h1>
               </div>
               <div className="mt-8">
@@ -45,9 +45,12 @@ export const Analysis = () => {
                   kg
                 </h4>
               </div>
-              <div>
-                
-              </div>
+            </div>
+            <div className="flex ml-8">
+              <h6 className="font-bold text-xs">Your recent weight is</h6>
+            </div>
+            <div className="flex ml-[50px]">
+              <h6 className="font-bold text-3xl">98 kg</h6>
             </div>
           </div>
           <div
@@ -57,10 +60,64 @@ export const Analysis = () => {
               borderWidth: 4,
             }}
           >
-            <div className="flex ml-5 mt-4">
-              <h6 className="font-bold text-xs">
+            <div className="flex ml-3 mt-4">
+              <h6 className="font-bold text-xs text-center">
                 Most contributed food to your calory :
               </h6>
+            </div>
+            <div className="grid grid-cols-2">
+              <div className="ml-3 mt-4">
+                <h6 className="font-bold text-xs text-secondary-400">
+                  1. Nasi Goreng
+                </h6>
+              </div>
+              <div className="ml-4 mt-4">
+                <h6
+                  className="font-bold text-center text-xs text-secondary-400 rounded-full"
+                  style={{
+                    borderColor: "#67C740",
+                    borderWidth: 2,
+                  }}
+                >
+                  250 calory
+                </h6>
+              </div>
+            </div>
+            <div className="grid grid-cols-2">
+              <div className="ml-3 mt-4">
+                <h6 className="font-bold text-xs text-secondary-400">
+                  2. Mie Goreng
+                </h6>
+              </div>
+              <div className="ml-4 mt-4">
+                <h6
+                  className="font-bold text-center text-xs text-secondary-400 rounded-full"
+                  style={{
+                    borderColor: "#67C740",
+                    borderWidth: 2,
+                  }}
+                >
+                  350 calory
+                </h6>
+              </div>
+            </div>
+            <div className="grid grid-cols-2">
+              <div className="ml-3 mt-4">
+                <h6 className="font-bold text-xs text-secondary-400">
+                  3. Rendang
+                </h6>
+              </div>
+              <div className="ml-4 mt-4">
+                <h6
+                  className="font-bold text-center text-xs text-secondary-400 rounded-full"
+                  style={{
+                    borderColor: "#67C740",
+                    borderWidth: 2,
+                  }}
+                >
+                  200 calory
+                </h6>
+              </div>
             </div>
           </div>
         </div>
