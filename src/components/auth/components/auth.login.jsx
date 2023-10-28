@@ -35,10 +35,10 @@ export const Login = () => {
           Log In
         </button>
       </div>
-      <div>
+      <div className="text-black">
         Don't have an account ?{" "}
         <Link href="/register">
-          <span className="link">Register</span>
+          <span className="link text-secondary-600">Register</span>
         </Link>
       </div>
     </main>
