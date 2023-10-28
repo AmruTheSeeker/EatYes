@@ -15,22 +15,7 @@ export const useSearch = () => {
   };
 
   const handleSubmitSearchData = async () => {
-    // toast.loading("Mohon tunggu...");
     const { name } = searchData;
-
-    // const res = await fetch(
-    //   `http://localhost:3000/api/v1/auth/foods?name=${name}`
-    // );
-    // const data = await res.json();
-
-    // console.log(data);
-    // const { data, message, errorMessage } = await res.json();
-    // toast.remove();
-
-    // if (errorMessage) {
-    //   alert(errorMessage);
-    // }
-    // toast.success("Registered complete, please login");
 
     router.push(`/find/${name}`);
   };

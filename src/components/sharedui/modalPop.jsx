@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Modal } from "flowbite-react";
+import Cookies from "js-cookie";
 
 export const BMRPopUp = () => {
   const [age, setAge] = useState(0);
@@ -31,13 +32,22 @@ export const BMRPopUp = () => {
         activityLevel,
       }),
     });
-    const data = await res.json();
+    const { data, token } = await res.json();
+    Cookies.remove("eatyes-data");
+    Cookies.remove("eatyes-token");
+    Cookies.set("eatyes-data", JSON.stringify(data));
+    Cookies.set("eatyes-token", JSON.stringify(token));
 
     setBMR(bmr);
   };
 
   const handleCalculate = () => {
     calculateBMR(true);
+  };
+
+  const closePopUp = () => {
+    props.setOpenModal(undefined);
+    window.location.reload();
   };
 
   const [openModal, setOpenModal] = useState(0);
@@ -123,10 +133,7 @@ export const BMRPopUp = () => {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <button
-            className="bg-secondary-400"
-            onClick={() => props.setOpenModal(undefined)}
-          >
+          <button className="bg-secondary-400" onClick={() => closePopUp()}>
             Close
           </button>
         </Modal.Footer>

@@ -19,7 +19,8 @@ export async function POST(req) {
         tall: 0,
         recent_weight: 0,
         profile_picture: "",
-        goals: "",
+        goals: 0,
+        bmr: 0,
       },
     });
     return NextResponse.json(
