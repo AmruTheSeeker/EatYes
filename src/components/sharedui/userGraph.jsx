@@ -50,12 +50,17 @@ export const GraphGuest = () => {
     // },
     {
       name: "Friday",
-      DailyCalory: 3600,
+      DailyCalory: 3000,
       GoalCalory: `${bmr}`,
     },
     {
       name: "Saturday",
       DailyCalory: `${calory}`,
+      GoalCalory: `${bmr}`,
+    },
+    {
+      name: "Sunday",
+      DailyCalory: 0,
       GoalCalory: `${bmr}`,
     },
   ];
