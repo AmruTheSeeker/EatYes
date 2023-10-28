@@ -2,8 +2,14 @@
 
 import React from "react";
 import { chewy } from "@/app/font";
+import Cookies from "js-cookie";
+import * as jose from "jose";
 
 export const Analysis = () => {
+  const cookie = Cookies.get("eatyes-token");
+  const token = JSON.parse(cookie);
+  const dataUser = jose.decodeJwt(token);
+
   return (
     <div>
       <div className="flex mb-2">
@@ -49,7 +55,7 @@ export const Analysis = () => {
             <h6 className="font-bold text-xs">Your recent weight is</h6>
           </div>
           <div className="flex ml-[50px]">
-            <h6 className="font-bold text-3xl">98 kg</h6>
+            <h6 className="font-bold text-3xl">{dataUser.weight} Kg</h6>
           </div>
         </div>
         <div

@@ -66,6 +66,7 @@ export async function PATCH(req, res) {
       email: findUser.email,
       bmr: bmr,
       calory: caloryToday,
+      weight: recent_weight,
     };
 
     const token = sign(payload, process.env.JWT_SECRET, { expiresIn: "1d" });

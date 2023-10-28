@@ -50,6 +50,7 @@ export async function POST(req, res) {
       email: findUser.email,
       bmr: findUser.bmr,
       calory: totalCalory,
+      weight: findUser.recent_weight,
     };
 
     const token = sign(payload, process.env.JWT_SECRET, { expiresIn: "1d" });

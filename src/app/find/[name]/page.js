@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
+import toast, { Toaster } from "react-hot-toast";
 import Image from "next/image";
 
 async function getFoodBySlug(name) {
@@ -21,6 +22,7 @@ export default async function Page({ params }) {
   const foodData = data[0];
 
   async function yesEat(food) {
+    toast.loading("Loading...");
     const food_name = food.name;
     const food_calory = food.calory;
     const food_id = food.id;
@@ -35,6 +37,8 @@ export default async function Page({ params }) {
     Cookies.remove("eatyes-token");
     Cookies.set("eatyes-data", JSON.stringify(data));
     Cookies.set("eatyes-token", JSON.stringify(token));
+    toast.remove();
+    toast.success("Success, please wait!");
 
     router.push("/dashboard/user");
   }

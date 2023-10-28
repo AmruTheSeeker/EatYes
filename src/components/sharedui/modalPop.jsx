@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Modal } from "flowbite-react";
 import Cookies from "js-cookie";
+import toast, { Toaster } from "react-hot-toast";
 
 export const BMRPopUp = () => {
   const [age, setAge] = useState(0);
@@ -13,6 +14,7 @@ export const BMRPopUp = () => {
   const [bmr, setBMR] = useState(0);
 
   const calculateBMR = async () => {
+    toast.loading("Loading...");
     let bmr = 0;
     if (gender === "male") {
       bmr = 88.362 + 13.397 * weight + 4.799 * height - 5.677 * age;
@@ -37,6 +39,8 @@ export const BMRPopUp = () => {
     Cookies.remove("eatyes-token");
     Cookies.set("eatyes-data", JSON.stringify(data));
     Cookies.set("eatyes-token", JSON.stringify(token));
+    toast.remove();
+    toast.success("Success!");
 
     setBMR(bmr);
   };
@@ -129,7 +133,7 @@ export const BMRPopUp = () => {
             </button>
           </div>
           <div className="mt-5">
-            <h2>You need : {bmr.toFixed(0)} calories per day</h2>
+            <h2>You need : {bmr.toFixed(0)} calories/day</h2>
           </div>
         </Modal.Body>
         <Modal.Footer>
