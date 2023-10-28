@@ -17,9 +17,9 @@ export const useSearch = () => {
   const handleSubmitSearchData = async () => {
     toast.loading("Loading...");
     const { name } = searchData;
+    router.push(`/find/${name}`);
     toast.remove();
     toast.success("Here your food!");
-    router.push(`/find/${name}`);
   };
 
   return { searchData, handleChangeSearchData, handleSubmitSearchData };
