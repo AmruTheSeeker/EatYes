@@ -9,7 +9,7 @@ import Image from "next/image";
 
 async function getFoodBySlug(name) {
   const res = await fetch(
-    `http://localhost:3000/api/v1/auth/foods?name=${name}`
+    `https://eatyes.vercel.app/api/v1/auth/foods?name=${name}`
   );
   const data = await res.json();
   return data;
